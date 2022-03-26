@@ -10,5 +10,6 @@
 	<h4>Student Surname : ${studentSurname}</h4>
 	<h4>Student Card : ${studentCard}</h4>
 	<h4>Student Place of Residence : ${placeofResidence}</h4>
+	<h4>Student Age : ${Age}</h4>
 </body>
 </html>
