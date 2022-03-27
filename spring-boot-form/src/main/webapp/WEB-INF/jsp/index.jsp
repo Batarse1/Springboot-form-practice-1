@@ -1,7 +1,8 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <title>spring boot form submit example</title>
-    <style type="text/css">
+    <style>
       *,
       *::before,
       *::after {
@@ -66,9 +67,9 @@
         margin: 20px auto;
       }
 
-	  @media only screen and (max-width: 500px) {
+      @media only screen and (max-width: 500px) {
         .form-container {
-		  margin: 0px auto;
+          margin: 0px auto;
         }
       }
 
@@ -122,11 +123,14 @@
       }
 
       .the-form label {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
+        display: block;
+        padding: 15px 0px;
         color: #e6e6e6;
         font-weight: bold;
+      }
+
+      .the-form label span {
+        padding: 15px 0px;
       }
 
       .the-form [type="text"],
@@ -138,7 +142,6 @@
         background: rgba(0, 0, 0, 0.2);
         border: 1px solid rgba(255, 255, 255, 0.1);
         border-radius: 3px;
-        margin-bottom: 15px;
         -webkit-transition: background 0.3s;
         transition: background 0.3s;
         color: #e6e6e6;
@@ -252,9 +255,19 @@
       .form-footer div a {
         color: #ffb37b;
       }
-      .required {
-        color: red;
+      .error {
+        display: block;
+
+        padding: 5px 3px;
+
+        color: #ed4337;
+
         font-weight: normal;
+        font-size: 14px;
+      }
+      .none {
+        display: none;
+        padding: 0px;
       }
     </style>
   </head>
@@ -269,41 +282,50 @@
                 <legend class="title">Student Details</legend>
                 <label for="studentName">
                   <span>Name</span>
-                  <input type="text" name="studentName" />
                 </label>
+                <input type="text" name="studentName" id="studentName" />
+                <span class="error"></span>
                 <label for="studentSurname">
                   <span>Surname</span>
-                  <input type="text" name="studentSurname" />
                 </label>
+                <input type="text" name="studentSurname" id="studentSurname" />
+                <span class="error"></span>
                 <label for="studentCard">
                   <span>UCA card name</span>
-                  <input type="text" name="studentCard" />
                 </label>
+                <input type="text" name="studentCard" id="studentCard" />
+                <span class="error"></span>
                 <label for="birthday">
                   <span>Birthday</span>
-                  <input type="text" name="birthday" />
                 </label>
+                <input type="text" name="birthday" id="birthday" />
+                <span class="error"></span>
                 <label for="placeofResidence">
                   <span>Place of residence</span>
-                  <select name="placeofResidence" class="residence">
-                    <option value="Ahuachapan">Ahuachap&atilde;n</option>
-                    <option value="Santa Ana">Santa Ana</option>
-                    <option value="Sonsonate">Sonsonate</option>
-                    <option value="La Libertad">La Libertad</option>
-                    <option value="Chalatenango">Chalatenango</option>
-                    <option value="Cuscatlan">Cuscatl&atilde;n</option>
-                    <option value="San Salvador">San Salvador</option>
-                    <option value="La Paz">La Paz</option>
-                    <option value="Cabanas">Caba&ntilde;as</option>
-                    <option value="San Vicente">San Vicente</option>
-                    <option value="Usulutan">Usulut&atilde;n</option>
-                    <option value="San Miguel">San Miguel</option>
-                    <option value="Morazan">Moraz&atilde;n</option>
-                    <option value="La Union">La Uni&otilde;n</option>
-                  </select>
                 </label>
+                <select
+                  name="placeofResidence"
+                  class="residence"
+                  id="placeofResidence"
+                >
+                  <option value="Ahuachapan">Ahuachap&atilde;n</option>
+                  <option value="Santa Ana">Santa Ana</option>
+                  <option value="Sonsonate">Sonsonate</option>
+                  <option value="La Libertad">La Libertad</option>
+                  <option value="Chalatenango">Chalatenango</option>
+                  <option value="Cuscatlan">Cuscatl&atilde;n</option>
+                  <option value="San Salvador">San Salvador</option>
+                  <option value="La Paz">La Paz</option>
+                  <option value="Cabanas">Caba&ntilde;as</option>
+                  <option value="San Vicente">San Vicente</option>
+                  <option value="Usulutan">Usulut&atilde;n</option>
+                  <option value="San Miguel">San Miguel</option>
+                  <option value="Morazan">Moraz&atilde;n</option>
+                  <option value="La Union">La Uni&otilde;n</option>
+                </select>
+                <span class="error"></span>
               </fieldset>
-              <input type="submit" value="Submit" />
+              <input type="submit" value="Save" />
             </form>
           </div>
         </div>
