@@ -1,9 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
-<html>
-<head>
-<title>spring boot form submit example</title>
-<style type="text/css">
-*,
+<html lang="en">
+  <head>
+    <title>spring boot form submit example</title>
+    <style>
+      *,
       *::before,
       *::after {
         box-sizing: border-box;
@@ -33,47 +33,23 @@
         outline: none;
       }
 
-      legend {
-        padding: 0;
-        display: table;
-      }
-      fieldset {
-        border: 0;
-        padding: 0.01em 0 0 0;
-        margin: 0;
-        min-width: 0;
-      }
-      body:not(:-moz-handler-blocked) fieldset {
-        display: table-cell;
-      }
-
       .main-container {
         max-width: 900px;
         margin: 0 auto;
       }
 
-      a {
-        color: inherit;
-        outline: none;
-        text-decoration: none;
-      }
-
-      a:hover {
-        text-decoration: underline;
-      }
-
-      .form-container {
+      .success-container {
         max-width: 450px;
         margin: 20px auto;
       }
 
-	  @media only screen and (max-width: 500px) {
-        .form-container {
-		  margin: 0px auto;
+      @media only screen and (max-width: 500px) {
+        .success-container {
+          margin: 0px auto;
         }
       }
 
-      .form-body {
+      .success-body {
         background-color: #4a304d;
         padding: 50px;
         color: #ffffff;
@@ -85,28 +61,38 @@
       }
 
       @media only screen and (max-width: 500px) {
-        .form-body {
+        .success-body {
           padding: 50px 40px;
         }
       }
 
       @media only screen and (max-width: 455px) {
-        .form-body {
+        .success-body {
           padding: 45px 30px;
         }
       }
 
       @media only screen and (max-width: 340px) {
-        .form-body {
+        .success-body {
           padding: 30px 20px;
         }
       }
 
-      .form-body .title {
+      .success-body .title {
         margin: 0;
         padding: 5px;
-        text-align: center;        
+        text-align: center;
+        font-weight: normal;
         width: 100%;
+      }
+
+      .success-body .subtitle {
+        margin: 0;
+        padding: 5px;
+        text-align: center;
+        font-weight: normal;
+        width: 100%;
+        font-size: 16px;
       }
 
       .the-form {
@@ -127,43 +113,39 @@
         gap: 15px;
         color: #e6e6e6;
         font-weight: bold;
-        padding-top: 35px;        
+        padding-top: 35px;
       }
+
       .required {
         color: red;
         font-weight: normal;
       }
-</style>
-</head>
-<body>	
-	<div class="main-container">
-      <div class="form-container">
-        <div class="form-body">
+
+      .information h4 {
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="success-container">
+        <div class="success-body">
           <h2 class="title">UCA</h2>
-          <div>
-            <form method="post" action="saveDetails" class="the-form">
-              <fieldset>
-                <legend class="title">Details has being submitted successfully</legend>
-                <label for="studentName">
-                  <span>Student Name : ${studentName}</span>
-                </label>
-                <label for="studentSurname">
-                  <span>Student Surname : ${studentSurname}</span>                  
-                </label>
-                <label for="studentCard">
-                  <span>Student Card : ${studentCard}</span>                  
-                </label>
-                <label for="placeofResidence">
-                  <span>Student Place of Residence : ${placeofResidence}</span>             
-                </label>
-                <label for="age">
-                  <span>Student Age : ${Age}</span>                  
-                </label>
-              </fieldset>              
-            </form>
+          <h3 class="subtitle">Details has being submitted successfully</h3>
+          <div class="information">
+            <h4>Student Name</h4>
+            <p>${studentName}</p>
+            <h4>Student Surname</h4>
+            <p>${studentSurname}</p>
+            <h4>Student UCA Card name</h4>
+            <p>${studentCard}</p>
+            <h4>Student Place of Residence</h4>
+            <p>${placeofResidence}</p>
+            <h4>Student Age</h4>
+            <p>${Age}</p>
           </div>
         </div>
       </div>
     </div>
-</body>
+  </body>
 </html>
