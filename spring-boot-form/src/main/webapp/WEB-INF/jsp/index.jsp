@@ -1,6 +1,10 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>spring boot form submit example</title>
     <style>
       *,
@@ -65,6 +69,7 @@
       .form-container {
         max-width: 450px;
         margin: 20px auto;
+        min-height: 100vh;
       }
 
       @media only screen and (max-width: 500px) {
@@ -284,22 +289,22 @@
                   <span>Name</span>
                 </label>
                 <input type="text" name="studentName" id="studentName" />
-                <span class="error"></span>
+                <span class="error">${errorStudentName}</span>
                 <label for="studentSurname">
                   <span>Surname</span>
                 </label>
                 <input type="text" name="studentSurname" id="studentSurname" />
-                <span class="error"></span>
+                <span class="error">${errorStudentSurname}</span>
                 <label for="studentCard">
                   <span>UCA card name</span>
                 </label>
                 <input type="text" name="studentCard" id="studentCard" />
-                <span class="error"></span>
+                <span class="error">${errorStudentCard}</span>
                 <label for="birthday">
                   <span>Birthday</span>
                 </label>
                 <input type="text" name="birthday" id="birthday" />
-                <span class="error"></span>
+                <span class="error">${errorStudentDate}</span>
                 <label for="placeofResidence">
                   <span>Place of residence</span>
                 </label>
@@ -308,22 +313,22 @@
                   class="residence"
                   id="placeofResidence"
                 >
-                  <option value="Ahuachapan">Ahuachap&atilde;n</option>
+                  <option value="Ahuachapán">Ahuachap&atilde;n</option>
                   <option value="Santa Ana">Santa Ana</option>
                   <option value="Sonsonate">Sonsonate</option>
                   <option value="La Libertad">La Libertad</option>
                   <option value="Chalatenango">Chalatenango</option>
-                  <option value="Cuscatlan">Cuscatl&atilde;n</option>
+                  <option value="Cuscatlán">Cuscatl&atilde;n</option>
                   <option value="San Salvador">San Salvador</option>
                   <option value="La Paz">La Paz</option>
-                  <option value="Cabanas">Caba&ntilde;as</option>
+                  <option value="Cabañas">Caba&ntilde;as</option>
                   <option value="San Vicente">San Vicente</option>
-                  <option value="Usulutan">Usulut&atilde;n</option>
+                  <option value="Usulután">Usulut&atilde;n</option>
                   <option value="San Miguel">San Miguel</option>
-                  <option value="Morazan">Moraz&atilde;n</option>
-                  <option value="La Union">La Uni&otilde;n</option>
+                  <option value="Morazán">Moraz&atilde;n</option>
+                  <option value="La Unión">La Uni&otilde;n</option>
                 </select>
-                <span class="error"></span>
+                <span class="error">${errorStudentPlaceOfResidence}</span>
               </fieldset>
               <input type="submit" value="Save" />
             </form>
