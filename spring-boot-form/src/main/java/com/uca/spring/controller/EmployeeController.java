@@ -31,6 +31,8 @@ public class EmployeeController {
       ModelMap modelMap) {
 	
 	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+	
+	Boolean validBirthday = false;
 	  
     if (Util.isDateValid(birthday)) {
       System.out.println("Valid Birthday");
@@ -52,6 +54,7 @@ public class EmployeeController {
             int realAge = 0;
             realAge = age.getYears();
             modelMap.put("Age", realAge);
+            validBirthday = true;
             
       	} catch (ParseException e) {
       		// TODO Auto-generated catch block
@@ -64,7 +67,14 @@ public class EmployeeController {
     modelMap.put("studentSurname", studentSurname);
     modelMap.put("studentCard", studentCard);
     modelMap.put("placeofResidence", placeofResidence);
+    
+    if(validBirthday) {
     return "success.jsp";
+    }
+    else {
+    	modelMap.put("errorMessage", "invalid Date");
+    	return "index.jsp";
+    }
   }
 
 

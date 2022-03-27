@@ -282,6 +282,7 @@
                 <label for="birthday">
                   <span>Birthday</span>
                   <input type="text" name="birthday" />
+                  <span>${errorMessage}</span>
                 </label>
                 <label for="placeofResidence">
                   <span>Place of residence</span>
